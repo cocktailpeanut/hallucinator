@@ -1,27 +1,24 @@
 module.exports = {
+  requires: {
+    bundle: "ai",
+  },
   run: [
     {
       method: "script.start",
       params: {
         uri: "torch.js",
         params: {
-          venv: "env",                // Edit this to customize the venv folder path
+          venv: "env",
         }
       }
     },
     {
       method: "shell.run",
       params: {
-        venv: "env",                // Edit this to customize the venv folder path
+        venv: "env",
         message: [
-          "pip install -r requirements.txt",
+          "uv pip install -r requirements.txt",
         ]
-      }
-    },
-    {
-      method: "fs.link",
-      params: {
-        venv: "env"
       }
     }
   ]
